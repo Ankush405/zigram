@@ -28,9 +28,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              
+            ]
           },
           "configurations": {
             "production": {
@@ -124,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "zigram"
+  "defaultProject": "zigram",
+  "cli": {
+    "analytics": "ad32d67f-a98a-4617-b923-197ade27859e"
+  }
 }

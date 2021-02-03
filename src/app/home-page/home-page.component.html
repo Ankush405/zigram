@@ -1,0 +1,61 @@
+<div class="container">
+  <form>
+    <div>
+      <div class="form-group">
+        <label for="exampleInputFilter">Select Filter</label>
+        <select class="form-control" id="exampleInputFilter" name="filter" [(ngModel)]="filterOption"
+          (ngModelChange)="fetchFilteredList()">
+          <option value="c">Category</option>
+          <option value="g">Glass</option>
+          <option value="i">Ingredients</option>
+          <option value="a">Alcohol</option>
+        </select>
+        
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFilter1">Select Field</label>
+        <select class="form-control" id="exampleInputFilter1" [(ngModel)]="product" name="productname">
+          <option>Select Option</option>
+          <option *ngFor="let opt of optionList">{{opt}}</option>
+
+        </select>
+        
+      </div>
+      
+      <button type="submit" class="btn btn-primary" (click)="fetchProductList()">Submit</button>
+    </div>
+    <div class="col-md-12 row" style="width: 100%; overflow: hidden;">
+      <div class="form-group col-md-4">
+        <label for="exampleInputFilter">Select Terms</label>
+        <select class="form-control" id="exampleInputFilter" name="filter" [(ngModel)]="searchOption">
+          <option value="s">Cocktail Name</option>
+          <option value="f">First Letter</option>
+          <option value="i">Ingredient Name</option>
+
+        </select>
+        
+      </div>
+
+      <div class="form-group col-md-4">
+        <label class="form-check-label" for="exampleCheck2">Enter Keyword</label>
+        <input type="text" class="form-control" id="exampleCheck2" name="keyItem" [(ngModel)]="searchKey">
+        
+      </div>
+      <div class="col-md-4">
+        <label class="form-check-label" for="btnSubmit"></label>
+        <button type="submit" class="btn btn-dark" (click)="searchProduct()" id="btnSubmit">Search</button>
+      </div>
+      
+    </div>
+
+
+
+
+
+
+  </form>
+  
+  
+</div>
+
+<app-image-list [drinkList]="productList"></app-image-list>
